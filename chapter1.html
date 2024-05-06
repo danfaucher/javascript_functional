@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1>Chapter 1</h1>
+    <h2>Key features of JavaScript</h2>
+    <ul>
+        <li>Functions as First-Class objects</li>
+        <li>Recursion</li>
+        <li>Closures</li>
+        <li>Arrow functions</li>
+        <li>Spread</li>
+    </ul>
+    <h3>Functions as First-Class Objects</h3>
+    <p>Saying objects are first-class means you can do with functions what you can do with other objects.You can pass
+        functions as parameters to other functions or return a function as a result of a function call.</p>
+    <h3>Recursion</h3>
+    <p>A function can call itself and when that call is done work with the result.</p>
+    <p>Example</p>
+    <pre><code>//factorial.js
+        function fact(n) {
+            if (n===0) {
+                return 1;
+            }else{
+                return n * fact(n -1);
+            }
+        }
+
+        console.log(fact(5)); // 120</code></pre>
+
+        <h3>Closures</h3>
+        <p>Closures are a way to implement data hiding. A function can refer to its local variables and eveything outside of the function</p>
+
+
+    <script>
+        //imperative.js
+        const data = [
+            { name: "John", age: 23, other: 'xxx' },
+            { name: "Paul", age: 18, other: 'yyy' },
+            { name: "George", age: 16, other: 'zzz' },
+            { name: "John", age: 25, other: 'ttt' },
+        ]
+
+        const result1 = [];
+
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].age > 21) {
+                result1.push(data[i]);
+            }
+        }
+
+        //declarative.js
+        const isAdult = (person) => person.age >= 21;
+        const result2 = data.filter(isAdult);
+
+        console.log("result1");
+        console.table(result1);
+
+        console.log("result2");
+        console.table(result2);
+
+
+        //factorial.js
+        function fact(n) {
+            if (n === 0) {
+                return 1;
+            } else {
+                return n * fact(n - 1);
+            }
+        }
+
+        console.log(fact(3)); // 120
+
+    </script>
+</body>
+
+</html>
